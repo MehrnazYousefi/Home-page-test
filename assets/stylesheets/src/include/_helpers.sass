@@ -1,0 +1,106 @@
+.rtl
+	direction: rtl
+
+.ltr
+	direction: ltr
+
+.block
+	display: block
+
+.inline-middle
+	display: inline-block
+	vertical-align: middle
+
+.v-middle
+	vertical-align: middle
+.v-top
+	vertical-align: top
+.v-bottom
+	vertical-align: bottom
+
+.float-l
+	float: left !important
+
+.float-r
+	float: right !important
+.hidden
+	display: none !important
+
+.cursor-pointer
+	cursor: pointer
+
+.bold
+	font-weight: bold
+
+.relative
+	position: relative
+
+.fullwidth
+	width: 100%
+
+img.fullwidth
+	height: auto
+
+.dynamic-middle
+	display: table
+	height: 100%
+	width: 100%
+	.middle-item 
+		display: table-cell
+		vertical-align: middle
+        
+.img-responsive
+	max-width: 100%
+	height: auto
+
+// Margins
+@for $i from 1 through 10
+	.mt-#{$i}
+		margin-top: $i*5px !important
+	.mb-#{$i}
+		margin-bottom: $i*5px !important
+	.ml-#{$i}
+		margin-left: $i*5px !important
+	.mr-#{$i}
+		margin-right: $i*5px !important
+
+// Paddings
+$j: 0
+@for $i from 1 through 5
+	$j: $j + 5
+	.pad-#{$j}
+		padding: #{$j}px !important
+
+.no-pad
+	padding: 0 !important
+.np-l
+	padding-left: 0 !important
+.np-t
+	padding-top: 0 !important
+.np-r
+	padding-right: 0 !important
+.np-b
+	padding-bottom: 0 !important
+
+// TEXT
+
+.lh-1
+	line-height: 1
+.text-left
+	text-align: left
+.text-right
+	text-align: right
+.text-center
+	text-align: center
+.text-justify
+	text-align: justify
+.text-nowrap
+	white-space: nowrap
+
+
+// Paddings
+$j: 0
+@for $i from 1 through 12
+	$j: $j + 25
+	.table-col-#{$i}
+		width: #{$j}px

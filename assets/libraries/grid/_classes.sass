@@ -1,0 +1,18 @@
+.clear-fix
+	&:before , &:after
+		clear: both
+		content: ' '
+		display: block
+
+.column
+	padding-left: $GRID_PADDING + px
+	padding-right: $GRID_PADDING + px
+	position: relative
+	min-height: 1px
+	@if $dir == ltr
+		float: left
+	@else
+		float: right
+
+.conditionally-visible
+	display: none !important

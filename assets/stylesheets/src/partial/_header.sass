@@ -1,0 +1,40 @@
+.header
+  background: #ffffff  url(#{$images}/header-img-2.png) no-repeat
+  width: 100%
+  height: 269px
+  background-size: cover
+  position: relative
+  .banner-title
+    position: absolute
+    top: 0
+    left: 22%
+  .logo
+    position: absolute
+    top: 0
+    >img
+      display: block
+
++mediaSm
+  .header
+    text-align: center
+    background-position-x: 23%
+    .logo
+      position: absolute
+      top: -145px
+    .banner-title
+      position: static
+
++mediaMd
+  .header
+    .logo
+      position: absolute
+      top: 44px
+
++mediaXs
+  .header
+    background-position-x: 14%
+    .banner-title
+      top: 0
+      >img
+        display: block
+        max-width: 100%

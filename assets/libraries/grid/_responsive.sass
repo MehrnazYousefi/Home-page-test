@@ -1,0 +1,68 @@
+@each $sizeName in $sizeNames
+    .visible-#{$sizeName} , .visible-#{$sizeName}-inline , .visible-#{$sizeName}-inline-block
+        @extend .conditionally-visible
+
++mediaXs()
+    .visible-xs-block
+        display: block !important
+    .visible-xs-inline-block
+        display: inline-block !important
+    .visible-xs-inline
+        display: inline !important
+    .hidden-xs
+        display: none !important
+        visibility: hidden !important
+
+    .table-responsive
+        overflow-x: auto
+        table
+            white-space: nowrap
+    .h-scroll-xs
+        overflow-x: auto
+
+    .mb-xs
+        margin-bottom: $GRID_PADDING+px
+
+    .block-xs
+        display: block !important 
+
+////--------------------------sm--------------------------
++mediaSm()
+    .visible-sm-block
+        display: block !important
+    .visible-sm-inline-block
+        display: inline-block !important
+    .visible-sm-inline
+        display: inline !important
+    .hidden-sm
+        display: none !important
+        visibility: hidden !important
+    .mb-sm
+        margin-bottom: $GRID_PADDING+px
+////---------------------------md-----------------------------
++mediaMd()
+    .visible-md-block
+        display: block !important
+    .visible-md-inline-block
+        display: inline-block !important
+    .visible-md-inline
+        display: inline !important
+    .hidden-md
+        display: none !important
+        visibility: hidden !important
+    .mb-md
+        margin-bottom: $GRID_PADDING+px
+
+//----------------------------lg----------------------------
++mediaLg()
+    .visible-lg-block
+        display: block !important
+    .visible-lg-inline-block
+        display: inline-block !important
+    .visible-lg-inline
+        display: inline !important
+    .hidden-lg
+        display: none !important
+        visibility: hidden !important
+    .mb-lg 
+        margin-bottom: $GRID_PADDING+px

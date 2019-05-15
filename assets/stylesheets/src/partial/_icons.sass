@@ -1,0 +1,34 @@
+=p-icon($w,$h,$pw,$ph)
+	width: $w+px
+	height: $h+px
+	background-position: $pw+px $ph+px
+
+
+.web-icon
+	display: inline-block
+	vertical-align: middle
+.wi
+	@extend .web-icon
+//--------------------------------------profile-------------------------------
+.wi[data-ico=global]
+	background: url(#{$images}/icons/sprit.png) no-repeat
+	&.wi-electronic-bank-icon
+		+p-icon(47,34,-57,-43)
+	&.wi-bank-services-icon
+		+p-icon(41,40,-147,-34)
+	&.wi-electronic-services-icon
+		+p-icon(43,37,-251,-32)
+	&.wi-arrow-right-icon
+		+p-icon(4,7,-947,-77)
+	&.wi-internet-bank-icon
+		+p-icon(50,42,-44,-270)
+	&.wi-virtual-bank-icon
+		+p-icon(52,44,-43,-158)
+	&.wi-internet-services-card-icon
+		+p-icon(47,48,-420,-135)
+	&.wi-club-users-icon
+		+p-icon(51,46,-294,-143)
+	&.wi-mobile-bank-icon
+		+p-icon(38,43,-611,-128)
+	&.wi-tejarat-bank-icon
+		+p-icon(49,49,-179,-143)

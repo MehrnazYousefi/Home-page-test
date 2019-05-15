@@ -1,0 +1,71 @@
+@import "config"
+@import "classes"
+@import "mixins"
+@import "responsive"
+
+body
+	direction: $dir
+
+*, :before, :after
+	box-sizing: border-box
+
+.container
+	padding-right: $GRID_PADDING+Px
+	padding-left: $GRID_PADDING+px
+	margin-right: auto
+	margin-left: auto
+
+.row
+	margin-right: -$GRID_PADDING+px
+	margin-left: -$GRID_PADDING+px
+	@extend .clear-fix
+	&.row-compact
+		margin-right: -5px
+		margin-left: -5px
+		> [class*=col-]
+			padding-left: 5px
+			padding-right: 5px
+
+.container
+	@extend .clear-fix
+
+
++basicColumnStyles()
+
+
+//-----------------xs--------------------
+
++columns('xs')
++offsets('xs')
++pushs('xs')
++pulls('xs')
+
+//--------------------------sm--------------------------
++mediaFromSm()
+	.container
+		width: ($GRID_CONTAINER_SM)+px
+
+	+columns('sm')
+	+offsets('sm')
+	+pushs('sm')
+	+pulls('sm')
+
+//---------------------------md-----------------------------
++mediaFromMd()
+	.container
+		width: ($GRID-CONTAINER-MD)+px
+	+columns('md')
+	+offsets('md')
+	+pushs('md')
+	+pulls('md')
+
+//----------------------------lg----------------------------
++mediaFromLg()
+	.container
+		width: ($GRID_CONTAINER_LG)+px
+	+columns('lg')
+	+offsets('lg')
+	+pushs('lg')
+	+pulls('lg')
+
+

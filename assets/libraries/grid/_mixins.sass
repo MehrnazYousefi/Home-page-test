@@ -1,0 +1,109 @@
+// COLUMNS
+// -------------------------------------------
+=basicColumnStyles()
+	@each $sizeName in $sizeNames
+		@for $i from 1 through $maxCols
+			.col-#{$sizeName}-#{$i}
+				@extend .column
+
+=columns($size)
+	@for $i from 1 through $maxCols
+		.col-#{$size}-#{$i}
+			+column($i)
+
+=column($size)
+	width: percentage($size/$maxCols)
+
+// OFFSETS
+// -------------------------------------------
+=offsets($sizeName)
+	@for $i from 0 through $maxCols
+		.col-#{$sizeName}-offset-#{$i}
+			+columnOffset($i)
+
+=columnOffset($offset)
+	@if $dir == ltr
+		@if $offset > 0
+			margin-left: percentage($offset/$maxCols)
+		@else
+			margin-left: auto
+	@else
+		@if $offset > 0
+			margin-right: percentage($offset/$maxCols)
+		@else
+			margin-right: auto
+// PUSH
+// -------------------------------------------
+=pushs($sizeName)
+	@for $i from 0 through $maxCols
+		.col-#{$sizeName}-push-#{$i}
+			+columnPush($i)
+
+=columnPush($push)
+	@if $dir == ltr
+		@if $push > 0
+			left: percentage($push/$maxCols)
+		@else
+			left: auto
+	@else
+		@if $push > 0
+			right: percentage($push/$maxCols)
+		@else
+			right: auto
+
+// PULL
+// -------------------------------------------
+=pulls($sizeName)
+	@for $i from 0 through $maxCols
+		.col-#{$sizeName}-pull-#{$i}
+			+columnPull($i)
+
+=columnPull($pull)
+	@if $dir == ltr
+		@if $pull > 0
+			right: percentage($pull/$maxCols)
+		@else
+			right: auto
+	@else
+		@if $pull > 0
+			left: percentage($pull/$maxCols)
+		@else
+			left: auto
+
+// Media Queries
+
+=from($size)
+	@media (min-width: $size)
+		@content
+
+=until($size)
+	@media (max-width: $size)
+		@content
+
+=mediaXs()
+	+until($GRID_XS+px)
+		@content
+
+=mediaSm()
+	@media (min-width: ($GRID_XS+1)+px) and (max-width: $GRID_SM+px)
+		@content
+
+=mediaFromSm()
+	+from(($GRID_XS+1)+px)
+		@content
+
+=mediaMd()
+	@media (min-width: ($GRID_SM+1)+px) and (max-width: $GRID_MD+px)
+		@content
+
+=mediaFromMd()
+	+from(($GRID_SM+1)+px)
+		@content
+
+=mediaFromLg()
+	+from(($GRID_MD+1)+px)
+		@content
+
+=mediaLg()
+	+mediaFromLg
+		@content
